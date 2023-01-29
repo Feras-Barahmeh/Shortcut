@@ -1,13 +1,16 @@
-<nav class="main_navigation <?= (isset($_COOKIE['menu_opened']) && $_COOKIE['menu_opened'] == 'true') ? 'opened no_animation' : '' ?>">
+<nav class="main_navigation p-20 hide-mobile" id="main_navigation">
     <div class="employee_info">
         <div class="profile_picture">
-            <img src="/" alt="User Profile Picture">
+            <img src="<?= IMG ?>avatar.png" class="s-img" alt="User Profile Picture">
         </div>
-        <span class="name">Feras Barahmeh</span>
-        <span class="privilege">Admin Application</span>
+        <span class="name block mt-5 fs-20">Feras Barahmeh</span>
+        <span class="privilege block mt-5 fs-15">Admin Application</span>
     </div>
-    <ul class="app_navigation">
-        <li class=""><a href="/"><i class="fa fa-dashboard"></i> General Statistics </a></li>
+    <ul class="app_navigation mt-15 txt-l">
+        <li class="cursor-pointer">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <p class="inline-block ml-5">General Setting</p>
+        </li>
     </ul>
 </nav>
-    <div class="action-view">
+    <div class="action-view pt-20 pl-20 ">

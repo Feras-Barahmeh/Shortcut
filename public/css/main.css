@@ -1,2 +1,40 @@
 /* Style Code Here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 1080px;
+}
+ul {
+    list-style: none;
+}
+/* Start Header */
+header.main {
+    width: 100%;
+    padding: 8px 5px;
+    background-color: #EEE;
+    font-size: 22px;
+}
+/* End Header */
 
+/* Start Navigation */
+div.body {
+    grid-template-columns: 300px 1fr;
+    height: 100%;
+}
+@media(max-width: 767px) {
+    div.body {
+        grid-template-columns: 1fr;
+    }
+    .menu-switch {
+        transform: rotate(90deg);
+    }
+}
+nav.main_navigation {
+    text-align: center;
+    background-color: #45454545;
+    box-shadow: #000000a1 0px 0px 2px;
+}
+/* End Navigation */

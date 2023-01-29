@@ -1,3 +1,8 @@
 <header class="main">
-    <a href="javascript:;" data-menu-status="" class="menu_switch"><i class="fa fa-bars"></i></a>
+    <span
+            class="menu-switch cursor-pointer inline-block ml10"
+            id="menu-switch"
+            data-condition-menu="false">
+        <i class="fa fa-bars"></i>
+    </span>
 </header>

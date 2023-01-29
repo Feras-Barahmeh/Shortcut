@@ -16,6 +16,8 @@ define("APP_PATH", realpath(dirname(dirname(__FILE__))));
 
 const TEMPLATE_PATH = APP_PATH . DS . 'template' . DS;
 const CSS = DS . "css" . DS;
+const JS = DS . "js" . DS;
+const IMG = DS . "images" . DS;
 
 
 // End Paths Constants

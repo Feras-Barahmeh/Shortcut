@@ -1,1 +1,1 @@
-<div class="wrapper">
+<div class="grid body">
