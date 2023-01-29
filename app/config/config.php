@@ -7,6 +7,12 @@ enum TypeDriver : int {
     case mysql = 2;
 }
 
+// Template
+
+const NAME_TEMPLATE_BLOCK_KEY = "template";
+const NAME_TEMPLATE_HEADER_RESOURCES = "header_resources";
+const NAME_TEMPLATE_FOOTER_RESOURCES = "footer_resources";
+const NAME_VIEW_TEMPLATE_KEY = ":view";
 
 ! defined("DS") ? define("DS", DIRECTORY_SEPARATOR) : null;
 

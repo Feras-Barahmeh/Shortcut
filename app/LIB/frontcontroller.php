@@ -9,13 +9,15 @@ class FrontController {
     private $_controller = "index";
     private $_action = "default";
     private $_params = [];
+    private $_template;
 
-    public function __construct()
+    public function __construct(Template $tem)
     {
+        $this->_template = $tem;
         $this->_parseURL();
     }
 
-    private function _parseURL()
+    private function _parseURL(): void
     {
         $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
         $url = explode('/', trim($url, '/'), 3);
@@ -26,7 +28,7 @@ class FrontController {
         $this->setParams(@$url[2]);
     }
 
-    public function dispatch()
+    public function dispatch(): void
     {
         $controllerClassName = "APP\Controllers\\" . ucfirst($this->_controller) . "Controller";
         $actionName          = $this->_action . "Action";
@@ -45,13 +47,14 @@ class FrontController {
         $controller->setController($this->_controller);
         $controller->setAction($this->_action);
         $controller->setParams($this->_params);
+        $controller->setTemplate($this->_template);
         $controller->$actionName();
     }
 
     /**
      * @param mixed $controller
      */
-    public function setController($controller)
+    public function setController(mixed $controller): void
     {
         if (isset($controller) && $controller) {
             $this->_controller = $controller;
@@ -61,7 +64,7 @@ class FrontController {
     /**
      * @param mixed $action
      */
-    public function setAction($action)
+    public function setAction(mixed $action): void
     {
         if (isset($action) && $action) {
             $this->_action = $action;
@@ -71,7 +74,7 @@ class FrontController {
     /**
      * @param mixed $params
      */
-    public function setParams($params)
+    public function setParams(mixed $params): void
     {
         if (isset($params) && $params) {
             $this->_params = explode('/', trim($params, '/'));

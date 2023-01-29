@@ -12,7 +12,7 @@ class EmployeeModel extends AbstractModel {
 
     protected static $tableName = "employees";
 
-    protected static $tableSchema = [
+    protected static array $tableSchema = [
         "name"      => self::DATA_TYPE_STR,
         "age"       => self::DATA_TYPE_INT,
         "address"   => self::DATA_TYPE_STR,
@@ -21,7 +21,7 @@ class EmployeeModel extends AbstractModel {
     ];
 
 
-    protected static $primaryKey = "id";
+    protected static string $primaryKey = "id";
 
 
 
