@@ -26,8 +26,6 @@ abstract class AbstractController {
             $view = VIEWS_PATH .$this->_controller . DS . $this->_action . ".view.php";
 
             if (file_exists($view)) {
-//                if ($extract) extract($this->_info);
-
                 $this->_template->setActionViewFile($view);
                 $this->_template->setData($this->_info);
                 $this->_template->renderFiles();

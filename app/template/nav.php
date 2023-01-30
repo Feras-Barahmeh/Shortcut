@@ -9,8 +9,20 @@
     <ul class="app_navigation mt-15 txt-l">
         <li class="cursor-pointer">
             <i class="fa fa-cog" aria-hidden="true"></i>
-            <p class="inline-block ml-5">General Setting</p>
+            <a href="/"><span class="inline-block ml-5">General Setting</span></a>
+        </li>
+        <li class="cursor-pointer">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <a href="/employee"><span class="inline-block ml-5">Employees</span></a>
+        </li>
+        <li class="cursor-pointer">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <a href="/employee/add"><span class="inline-block ml-5">Add Employee</span></a>
+        </li>
+        <li class="cursor-pointer">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <a href="/"><span class="inline-block ml-5">Logout</span></a>
         </li>
     </ul>
 </nav>
-    <div class="action-view pt-20 pl-20 ">
+    <div class="action-view pt-20 pl-20 pr-20" id="action-view">

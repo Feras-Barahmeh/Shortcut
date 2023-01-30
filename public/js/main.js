@@ -2,9 +2,12 @@
 const menuSwitch    = document.getElementById("menu-switch");
 const mainNav       = document.getElementById("main_navigation");
 const conditionMenu = menuSwitch.getAttribute("data-condition-menu");
+const actionView    = document.getElementById("action-view");
 
 
 menuSwitch.addEventListener("click", () => {
     mainNav.classList.toggle("hidden");
     menuSwitch.classList.toggle("rout-90");
+    mainNav.classList.remove("hidden-mobile");
+    actionView.parentElement.classList.toggle("grid");
 });

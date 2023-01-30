@@ -2,27 +2,56 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    line-height: 1.3;
+    font-size: 1em;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #45454545;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    opacity: .5;
+    cursor: pointer;
 }
 body {
-    height: 1080px;
+    height: 74vh;
 }
 ul {
     list-style: none;
 }
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
 /* Start Header */
 header.main {
-    width: 100%;
+    max-width: 100%;
     padding: 8px 5px;
     background-color: #EEE;
     font-size: 22px;
+    box-shadow: 1px 1px 6px grey;
 }
 /* End Header */
 
 /* Start Navigation */
+p.title {
+ color: #777;
+}
 div.body {
     grid-template-columns: 300px 1fr;
-    height: 100%;
+    height: 94vh;
 }
 @media(max-width: 767px) {
     div.body {
@@ -35,6 +64,32 @@ div.body {
 nav.main_navigation {
     text-align: center;
     background-color: #45454545;
-    box-shadow: #000000a1 0px 0px 2px;
+    box-shadow: 1px 1px 6px grey;
+}
+nav.main_navigation ul li {
+    padding: 10px;
+    transition: all .3s ease-out;
+    border-radius: 5px;
+    background: rgba(225, 225, 225, 0.13);
+}
+nav.main_navigation ul li:hover {
+    background-color: rgba(128, 128, 128, 0.68);
+}
+nav.main_navigation ul li span {
+    font-size: 19px;
+    color: dimgray;
+}
+nav.main_navigation ul li:hover span {
+    color: #eee;
 }
 /* End Navigation */
+
+/* Start Action View */
+div.action-view {
+    overflow: hidden;
+}
+h1.title-header {
+    font-size: 40px;
+    color: #777;
+}
+/* End Action View */

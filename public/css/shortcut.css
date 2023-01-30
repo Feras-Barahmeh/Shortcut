@@ -367,6 +367,11 @@
     align-items: center;
     justify-content: space-between;
 }
+.around-ele {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .btn-shape:hover {
     opacity: 9;
     color: #FFF;
@@ -375,6 +380,9 @@
 /* Start OverFlow */
 .over-h {
     overflow: hidden;
+}
+.overflowX-auto {
+    overflow-x: auto;
 }
 /* End OverFlow */
 /* Start Images */
