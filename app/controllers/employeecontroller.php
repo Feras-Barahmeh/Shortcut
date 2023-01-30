@@ -4,16 +4,15 @@ namespace APP\Controllers;
 use APP\Helpers\PublicHelper\PublicHelper;
 use APP\LIB\FilterInput;
 use APP\Models\EmployeeModel;
-use function MVC\pr;
 
 class EmployeeController extends AbstractController {
     use FilterInput;
     use PublicHelper;
     public function defaultAction()
     {
+        $this->_languages->load("employee.default");
         $this->_info["employees"] = EmployeeModel::getAll();
-
-        $this->_renderView(true);
+        $this->_renderView();
     }
 
     public function addAction()
@@ -39,7 +38,7 @@ class EmployeeController extends AbstractController {
         if (isset($_POST["edit-employee"])) {
             $this->prepareInfoEmployee($employee);
         }
-        $this->_renderView(true);
+        $this->_renderView();
     }
 
     public function deleteAction()

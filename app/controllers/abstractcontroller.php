@@ -12,13 +12,14 @@ abstract class AbstractController {
     protected $_params;
     public $_info;
     protected $_template;
+    protected $_languages;
 
     public function notFoundAction(): void
     {
         $this->_renderView();
     }
 
-    protected function _renderView($extract=false): void
+    protected function _renderView(): void
     {
         if ($this->_action == FrontController::NOT_FOUND_ACTION) {
             require_once VIEWS_PATH ."notfound" . DS . "notfound.view.php";
@@ -26,6 +27,7 @@ abstract class AbstractController {
             $view = VIEWS_PATH .$this->_controller . DS . $this->_action . ".view.php";
 
             if (file_exists($view)) {
+                $this->_info = array_merge($this->_info, $this->_languages->getDictionary());
                 $this->_template->setActionViewFile($view);
                 $this->_template->setData($this->_info);
                 $this->_template->renderFiles();
@@ -39,6 +41,11 @@ abstract class AbstractController {
     {
         $this->_template = $tem;
     }
+
+    public function setLanguages($lang): void
+    {
+        $this->_languages = $lang;
+    }
     public function setController(mixed $controller): void
     {
         $this->_controller = $controller;
@@ -48,8 +55,6 @@ abstract class AbstractController {
     {
         $this->_action = $action;
     }
-
-
     public function setParams(mixed $params): void
     {
         $this->_params = $params;

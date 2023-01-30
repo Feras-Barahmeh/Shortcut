@@ -2,7 +2,7 @@
 
 namespace APP\Lib;
 
-use function MVC\pr;
+use APP\LIP\l;
 
 class FrontController {
 
@@ -12,10 +12,11 @@ class FrontController {
     private $_action = "default";
     private $_params = [];
     private $_template;
-
-    public function __construct(Template $tem)
+    private $_language;
+    public function __construct(Template $tem, Language $lang)
     {
         $this->_template = $tem;
+        $this->_language = $lang;
         $this->_parseURL();
     }
 
@@ -49,6 +50,7 @@ class FrontController {
         $controller->setAction($this->_action);
         $controller->setParams($this->_params);
         $controller->setTemplate($this->_template);
+        $controller->setLanguages($this->_language);
         $controller->$actionName();
     }
     public function setController(mixed $controller): void

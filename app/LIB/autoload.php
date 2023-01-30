@@ -3,7 +3,8 @@ namespace APP\LIP;
 
 
 class  AutoLoad {
-    public static function autoLoad($className) {
+    public static function autoLoad($className)
+    {
         $className = str_replace("APP", '', $className);
         $className = strtolower($className) . ".php" ;
 
