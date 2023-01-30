@@ -31,8 +31,11 @@ class Template
     {
         return array_key_exists($nameKey, $this->_templateParts);
     }
+
     private function requireFiles($parts): void
     {
+
+        extract($this->_info);
         foreach ($parts as $partKey => $partValue) {
             if ($partKey === NAME_VIEW_TEMPLATE_KEY)
                 require_once $this->_actionView;
@@ -46,6 +49,7 @@ class Template
             $parts = $this->_templateParts[NAME_TEMPLATE_BLOCK_KEY];
 
             if(! empty($parts)) {
+
                 $this->requireFiles($parts);
             }
 

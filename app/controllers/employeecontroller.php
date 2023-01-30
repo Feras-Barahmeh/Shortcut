@@ -4,6 +4,7 @@ namespace APP\Controllers;
 use APP\Helpers\PublicHelper\PublicHelper;
 use APP\LIB\FilterInput;
 use APP\Models\EmployeeModel;
+use function MVC\pr;
 
 class EmployeeController extends AbstractController {
     use FilterInput;
@@ -11,6 +12,7 @@ class EmployeeController extends AbstractController {
     public function defaultAction()
     {
         $this->_info["employees"] = EmployeeModel::getAll();
+
         $this->_renderView(true);
     }
 

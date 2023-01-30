@@ -2,6 +2,8 @@
 
 namespace APP\Lib;
 
+use function MVC\pr;
+
 class FrontController {
 
     const NOT_FOUND_ACTION = "notFoundAction";
@@ -43,37 +45,24 @@ class FrontController {
             $this->_action = $actionName = self::NOT_FOUND_ACTION;
         }
 
-
         $controller->setController($this->_controller);
         $controller->setAction($this->_action);
         $controller->setParams($this->_params);
         $controller->setTemplate($this->_template);
         $controller->$actionName();
     }
-
-    /**
-     * @param mixed $controller
-     */
     public function setController(mixed $controller): void
     {
         if (isset($controller) && $controller) {
             $this->_controller = $controller;
         }
     }
-
-    /**
-     * @param mixed $action
-     */
     public function setAction(mixed $action): void
     {
         if (isset($action) && $action) {
             $this->_action = $action;
         }
     }
-
-    /**
-     * @param mixed $params
-     */
     public function setParams(mixed $params): void
     {
         if (isset($params) && $params) {

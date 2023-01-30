@@ -12,7 +12,7 @@ abstract class DatabaseHandler
 
     abstract protected static function getInstance();
 
-    public static function factory()
+    public static function factory():  PDODatabaseHandler | MySQLiDatabaseHandler
     {
         $driver = DATABASE_CONN_DRIVER;
         if ($driver == self::DATABASE_DRIVER_POD) {
@@ -20,6 +20,7 @@ abstract class DatabaseHandler
         } elseif ($driver == self::DATABASE_DRIVER_MYSQLI) {
             return MySQLiDatabaseHandler::getInstance();
         }
+        return PDODatabaseHandler::getInstance();
     }
 
     public static function lastInsertID()

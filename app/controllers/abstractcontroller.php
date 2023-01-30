@@ -3,6 +3,7 @@
 namespace APP\Controllers;
 
 use APP\Lib\FrontController;
+use function MVC\pr;
 
 abstract class AbstractController {
 
@@ -26,6 +27,7 @@ abstract class AbstractController {
 
             if (file_exists($view)) {
 //                if ($extract) extract($this->_info);
+
                 $this->_template->setActionViewFile($view);
                 $this->_template->setData($this->_info);
                 $this->_template->renderFiles();
