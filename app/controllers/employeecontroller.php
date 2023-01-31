@@ -10,11 +10,10 @@ class EmployeeController extends AbstractController {
     use PublicHelper;
     public function defaultAction()
     {
-        $this->_languages->load("employee.default");
+        $this->_language->load("employee.default");
         $this->_info["employees"] = EmployeeModel::getAll();
         $this->_renderView();
     }
-
     public function addAction()
     {
         if (isset($_POST["add-employee"])) {

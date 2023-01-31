@@ -20,11 +20,13 @@ class Template
 
     private function setTemplateHeaderStart(): void
     {
+        if (isset($this->_info)) extract($this->_info);
         require_once TEMPLATE_PATH . "templateheaderstart.php";
     }
 
     private function setTemplateHeaderEnd(): void
     {
+        if (isset($this->_info)) extract($this->_info);
         require_once TEMPLATE_PATH . "templateheaderend.php";
     }
     private function ifKeyTemplatePartExist($nameKey): bool
@@ -34,13 +36,15 @@ class Template
 
     private function requireFiles($parts): void
     {
-
         if (isset($this->_info)) extract($this->_info);
         foreach ($parts as $partKey => $partValue) {
             if ($partKey === NAME_VIEW_TEMPLATE_KEY)
                 require_once $this->_actionView;
             else
+            {
                 require_once $partValue;
+            }
+
         }
     }
     private function renderTemplateFiles(): void
@@ -112,12 +116,11 @@ class Template
 
     private function setTemplateFooter(): void
     {
+        if (isset($this->_info)) extract($this->_info);
         require_once TEMPLATE_PATH . "tempaltefooter.php";
     }
     public function renderFiles(): void
     {
-
-//        extract($this->_info);
         $this->setTemplateHeaderStart();
         $this->renderHeaderResources();
         $this->setTemplateHeaderEnd();

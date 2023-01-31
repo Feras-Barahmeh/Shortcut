@@ -2,7 +2,8 @@
 
 namespace APP\Lib;
 
-use APP\LIP\l;
+use APP\LIP\languages;
+use function APP\pr;
 
 class FrontController {
 
@@ -50,7 +51,7 @@ class FrontController {
         $controller->setAction($this->_action);
         $controller->setParams($this->_params);
         $controller->setTemplate($this->_template);
-        $controller->setLanguages($this->_language);
+        $controller->setLanguage($this->_language);
         $controller->$actionName();
     }
     public function setController(mixed $controller): void
