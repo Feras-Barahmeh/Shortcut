@@ -16,11 +16,21 @@ function pr($arr, $typePrint=1): void
     echo "</pre>";
 }
 
+
 ! defined("DS") ? define("DS", DIRECTORY_SEPARATOR) : null;
 
 
+
+// Requires File
 require_once ".." . DS . "app" . DS . "config" . DS . "config.php";
 require_once APP_PATH . DS . "LIB" . DS . "autoload.php";
+
+// Session
+session_start();
+if (! isset($_SESSION["lang"])) {
+    $_SESSION["lang"] = APP_DEFAULT_LANGUAGE;
+}
+
 $templateParts = require_once ".." . DS . "app" . DS . "config" . DS . "templateconfig.php";
 
 $template   = new Template($templateParts);

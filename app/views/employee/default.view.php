@@ -1,7 +1,7 @@
 <h1 class="title-header">Employees</h1>
 
 <div class="header-option flex">
-    <a href="employee/add" class="mt-10">Add Employee</a>
+    <a href="employee/add" class="mt-10"><?= $text_add_employee ?></a>
 </div>
 
 <!-- Show Employees -->
@@ -9,12 +9,12 @@
         <table class="">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Address</th>
-                    <th>Salary</th>
-                    <th>Tax %</th>
-                    <th>Controllers</th>
+                    <th><?= $text_table_name_employee ?></th>
+                    <th><?= $text_table_age_employee ?></th>
+                    <th><?= $text_table_address_employee ?></th>
+                    <th><?= $text_table_salary_employee ?></th>
+                    <th><?= $text_table_tax_employee ?></th>
+                    <th><?= $text_table_controllers_employee ?></th>
                 </tr>
             </thead>
 

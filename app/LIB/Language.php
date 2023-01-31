@@ -7,6 +7,7 @@ class Language
 {
     private string $_path;
     private array $_dictionary = [];
+    private string $_userLanguage;
     private function handlerPathLanguage($path): string
     {
         return str_replace('.', DS, $path) . ".lang.php";
@@ -14,7 +15,7 @@ class Language
 
     private function ifFileLangExist(): bool
     {
-        $this->_path = LANGUAGES_PATH . APP_DEFAULT_LANGUAGE . DS . $this->handlerPathLanguage($this->_path);
+        $this->_path = LANGUAGES_PATH . $this->_userLanguage . DS . $this->handlerPathLanguage($this->_path);
         return file_exists($this->_path);
     }
 
@@ -29,8 +30,16 @@ class Language
             $this->_dictionary[$key] = $value;
         }
     }
+
+    private function setSessionLanguage(): void
+    {
+        if (isset($_SESSION["lang"])) {
+            $this->_userLanguage = $_SESSION["lang"];
+        }
+    }
     public function load($dirAndAction): void
     {
+        $this->setSessionLanguage();
         $this->setPath($dirAndAction);
         if ($this->ifFileLangExist()) {
             require $this->_path;

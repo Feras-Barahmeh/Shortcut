@@ -38,6 +38,5 @@ defined('DATABASE_PORT_NUMBER')     ? null : define ('DATABASE_PORT_NUMBER', 330
 defined('DATABASE_CONN_DRIVER')     ? null : define ('DATABASE_CONN_DRIVER', TypeDriver::pdo);
 
 // Start Languages Paths
-
-const APP_DEFAULT_LANGUAGE = "ar";
+const APP_DEFAULT_LANGUAGE = "en";
 const LANGUAGES_PATH = APP_PATH . DS . "languages" . DS;

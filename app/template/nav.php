@@ -12,6 +12,10 @@
             <a href="/"><span class="inline-block ml-5">General Setting</span></a>
         </li>
         <li class="cursor-pointer">
+            <i class="fa fa-language" aria-hidden="true"></i>
+            <a href="/language"><span class="inline-block ml-5">Change Language</span></a>
+        </li>
+        <li class="cursor-pointer">
             <i class="fa fa-users" aria-hidden="true"></i>
             <a href="/employee"><span class="inline-block ml-5">Employees</span></a>
         </li>
