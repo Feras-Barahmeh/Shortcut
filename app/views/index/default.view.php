@@ -1,1 +1,5 @@
-<h1>Welcome In Index Controller Default Action</h1>
+<?php
+    print_r($_SESSION);
+?>
+
+<h1>Layout</h1>

@@ -1,12 +1,12 @@
 <?php
 
+
 // APP Data Types
 
 enum TypeDriver : int {
     case pdo = 1;
     case mysql = 2;
 }
-
 // Template
 
 const NAME_TEMPLATE_BLOCK_KEY = "template";
@@ -18,10 +18,12 @@ const NAME_VIEW_TEMPLATE_KEY = ":view";
 
 
 // Start Global Paths Constants
-define("APP_PATH", realpath(dirname(dirname(__FILE__))));
+define("APP_PATH", realpath(dirname(__FILE__, 2)));
 const TEMPLATE_PATH = APP_PATH . DS . 'template' . DS;
+
 const CSS = DS . "css" . DS;
-const JS = DS . "js" . DS;
+
+const JS  = DS . "js" . DS;
 const IMG = DS . "images" . DS;
 
 
@@ -39,4 +41,5 @@ defined('DATABASE_CONN_DRIVER')     ? null : define ('DATABASE_CONN_DRIVER', Typ
 
 // Start Languages Paths
 const APP_DEFAULT_LANGUAGE = "en";
+
 const LANGUAGES_PATH = APP_PATH . DS . "languages" . DS;

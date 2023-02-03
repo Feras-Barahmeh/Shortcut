@@ -11,3 +11,12 @@ menuSwitch.addEventListener("click", () => {
     mainNav.classList.remove("hidden-mobile");
     actionView.parentElement.classList.toggle("grid");
 });
+
+// Show Drop Down Menu
+const dropDown  = document.getElementById("drop-down");
+const menu      = dropDown.querySelector("#menu");
+
+dropDown.addEventListener("click", () => {
+    menu.classList.toggle("visible");
+});
+

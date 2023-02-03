@@ -62,6 +62,9 @@
 .gap-10 {
     gap: 10px;
 }
+.gap-15 {
+    gap: 15px;
+}
 .gap-20 {
     gap: 20px;
 }
@@ -375,6 +378,23 @@
 .btn-shape:hover {
     opacity: 9;
     color: #FFF;
+}
+.description {
+    position: relative;
+    transition: left .3s ease-in-out;
+}
+.description:hover::after {
+    content: attr(description);
+    background-color: var(--bg-black-70);
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 33px;
+    left: 0;
+    padding: 5px;
+    font-size: 15px;
+    white-space: nowrap;
+    color: var(--text-black-700);
 }
 /* End Components  */
 /* Start OverFlow */

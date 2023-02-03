@@ -3,13 +3,14 @@
 namespace APP\Controllers;
 
 use APP\Lib\FrontController;
+use function APP\pr;
 
 
 abstract class AbstractController {
     protected $_controller;
     protected $_action;
     protected $_params;
-    public $_info;
+    public $_info = [];
     protected $_template;
     protected $_language;
 
