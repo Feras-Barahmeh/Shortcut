@@ -43,3 +43,9 @@ defined('DATABASE_CONN_DRIVER')     ? null : define ('DATABASE_CONN_DRIVER', Typ
 const APP_DEFAULT_LANGUAGE = "en";
 
 const LANGUAGES_PATH = APP_PATH . DS . "languages" . DS;
+
+// Session Configuration
+const SESSION_SAVE_PATH = APP_PATH . DS . ".." . DS . "sessions";
+const SESSION_NAME = "MVC";
+const SESSION_DOMAIN = ".mvc.local";
+const SESSION_MAX_LIVE_TIME = 0;
