@@ -1,40 +1,38 @@
 <?php
+
 namespace APP;
 
-
-use APP\lib\FrontController;
-use APP\LIB\Template;
-use APP\LIB\Language;
-
-function pr($arr, $typePrint=1): void
-{
-    echo "<pre>";
-    if ($typePrint)
-        print_r($arr);
-    else
-        var_dump($arr);
-    echo "</pre>";
-}
+use App\Core\Engine;
+use App\Core\Language;
+use App\Core\Messages;
+use App\Core\Registration;
+use App\Core\Session;
+use App\Core\Template;
 
 
 ! defined("DS") ? define("DS", DIRECTORY_SEPARATOR) : null;
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 
-
-// Requires File
 require_once ".." . DS . "app" . DS . "config" . DS . "config.php";
-require_once APP_PATH . DS . "LIB" . DS . "autoload.php";
+require_once APP_PATH . DS . "core" . DS . "/Autoload.php";
 
-// Session
-session_start();
-if (! isset($_SESSION["lang"])) {
-    $_SESSION["lang"] = APP_DEFAULT_LANGUAGE;
+
+Session::start();
+
+if (! Session::has("lang")) {
+    Session::set("lang",  APP_DEFAULT_LANGUAGE);
 }
 
-$templateParts = require_once ".." . DS . "app" . DS . "config" . DS . "templateconfig.php";
+$languages      = new  Language();
+$messages = Messages::getInstance();
 
-$template   = new Template($templateParts);
-$languages  = new Language();
+$registry       = Registration::getInstance();
 
-$frontController = new FrontController($template, $languages);
-$frontController->dispatch();
+@$registry->language = $languages;
+@$registry->messages  = $messages;
+
+
+$app = new Engine($registry);
+$app->request();
