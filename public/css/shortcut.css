@@ -61,50 +61,35 @@
 .flex {
     display: flex;
 }
-.sort-col {
+.flex-columns {
     flex-direction: column;
 }
-.revers-r {
+.direction-reverse {
     flex-direction: row-reverse;
 }
-.reverse-c {
+.reverse-columns {
     flex-direction: column-reverse;
 }
-.f-al-ce {
+.algin-items-center {
     align-items: center;
 }
-.f-sp-between {
+.justify-content-between {
     justify-content: space-between;
 }
-.space-evenly {
+.justify-content-evenly {
     justify-content: space-evenly;
 }
 .flex-1 {
     flex: 1;
 }
-.f-wrap {
+.flex-wrap {
     flex-wrap: wrap;
 }
-.f-wrap-rev {
+.flex-wrap-rev {
     flex-wrap: wrap-reverse;
 }
 .grid {
     display: grid;
-}
-.wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-}
-.wrapper-200 {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-
-@media(max-width: 767px) {
-    .wrapper {
-        grid-template-columns:  minmax(200px, 1fr);
-    }
-    .wrapper-450px {
-        grid-template-columns:  minmax(200px, 1fr);
-    }
 }
 .gap-10 {
     gap: 10px;
@@ -121,7 +106,7 @@
     }
 }
 /* End Type Disply */
-button {
+.pointer {
     cursor: pointer;
 }
 /* Start Width */
@@ -133,16 +118,6 @@ button {
 }
 .w-h {
     width: 50%;
-}
-.w-hh {
-    width: 75%;
-}
-
-.max-w-40-per {
-    max-width: 40%;
-}
-.max-w-50-per {
-    max-width: 50%;
 }
 /* End Width */
 /* Start Padding */
@@ -467,9 +442,7 @@ button {
 }
 /* End Text */
 /* Start Border */
-.border {
-    border: 1px solid #EEEEEE;
-}
+
 .border-danger {
     border: 2px solid var(--danger-color-900);
 }
@@ -493,35 +466,28 @@ button {
 }
 /* End Border */
 /*Start Pointer event*/
-.pointer-e-non {
+.pointer-events-none {
     pointer-events: none;
 }
 /*End Pointer event*/
 /* Start Box Shadow */
-.box-sh-op10-wh { /* op : opacity 10; wh : color white  */
-    box-shadow: 0 0 10px #DDD;
-}
 /* End Box Shadow */
 
 /* Start Components  */
-.center-ele {
+.center-items {
     display: flex ;
     align-items: center;
     justify-content: center;
 }
-.between-ele {
+.between-items {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.around-ele {
+.around-items {
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-.btn-shape:hover {
-    opacity: 9;
-    color: #FFF;
 }
 .description {
     position: relative;
@@ -564,10 +530,10 @@ button {
 .over-h {
     overflow: hidden;
 }
-.overflowX-scroll {
+.flow-x-scroll {
     overflow-x: scroll;
 }
-.overflowX-auto {
+.flow-x-auto {
     overflow-x: auto;
 }
 /* End OverFlow */
@@ -580,18 +546,8 @@ button {
     max-width: 100px;
     max-height: 100px;
 }
-.s-rec-img {
-    width: 100px;
-    height: 60px;
-}
-.m-rec-img {
-    width: 400px;
-    max-width: 400px;
-    max-height: 250px;
-}
-.img-table {
-    max-width: 50px;
-    max-height: 30px;
+.img-fluid {
+    width: 100%;
 }
 /* End Images */
 
@@ -648,208 +604,13 @@ button {
     }
 }
 /* End Media In General */
-
-/* Start popup */
-.card {
-    background-color: #eee;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all .5s ease-in-out;
-    border-radius: 10px;
-    opacity: 0;
-}
-.card.show {
-    opacity: 1;
-    top: 50%;
-}
-.card.danger {
-    border-color: var(--danger-color-700);
-}
-.card.success,
-.card.done {
-    border-color: var(--success-color-700);
-}
-.card .symbol span.express-symbol {
-    font-size: 99px;
-    border: 5px solid;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -81px;
-    left: 0;
-}
-.card .symbol span.express-symbol.danger {
-    color: white;
-    background-color:  var(--danger-color-300);
-    border-color: var(--danger-color-500);
-}
-.card .symbol span.express-symbol.success {
-    color: white;
-    background-color:  var(--success-color-300);
-    border-color: var(--success-color-500);
-}
-.card .symbol span.express-symbol.done {
-    color: white;
-    background-color:  var(--success-color-300);
-    border-color: var(--success-color-500);
-}
-.card h2.title {
-    font-size: 35px;
-    color: gray;
-}
-.card p.content {
-    font-size: 20px;
-}
-.card p.content.danger {
-    color: var(--danger-color-700);
-}
-.card p.content.success {
-    color: var(--success-color-700);
-}
-.card .ok,
-.card .discus span.delete {
-    border: 1px solid;
-    width: 60px;
-    text-align: center;
-    margin-top: 10px;
-    color: white;
-    cursor: pointer;
-    padding: 5px;
-}
-.card .ok {
-    background-color: var(--success-color-300);
-}
-.card .discus span.delete {
-    background-color: var(--danger-color-300);
-}
-.card .ok:hover,
-.card .discus span.delete:hover {
-    opacity: .8;
-}
-/* End popup */
-
-/* Start Flush Messages */
-.flash-message-container {
-    position: fixed;
-    right: 2%;
-    top: 4%;
-    display: flex;
-    flex-direction: column;
-    z-index: 10000;
-}
-.flash-message-container .flash-message {
-    padding: 4px 9px;
-    min-width: 100%;
-    border-radius: 3px;
-    margin-bottom: 5px;
-    box-shadow: 1px 1px 1px rgb(0 0 0 / 11%);
-    color: white;
-    animation: fed-in 1s ease-in-out;
-    display: flex;
-    align-items: center;
-}
-.flash-message-container .flash-message .flash-symbol {
-    margin-right: 5px;
-    font-size: 22px;
-    width: 20px;
-    border-radius: 50%;
-    height: 20px;
-    text-align: center;
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-}
-
-.flash-message-container .flash-message .flash-symbol.danger {
-    background-color: var(--danger-color-900);
-    border: 2px solid var(--danger-color-900);
-}
-.flash-message-container .flash-message .flash-symbol.success {
-    background-color: var(--success-color-900);
-    border: 2px solid var(--success-color-900);
-}
-.flash-message-container .flash-message .flash-symbol.warning {
-    background-color: var(--warning-color-900);
-    border: 2px solid var(--warning-color-900);
-}
-.flash-message-container .flash-message .flash-symbol.info {
-    background-color: var(--info-color-900);
-    border: 2px solid var(--info-color-900);
-}
-.fed-out {
-    animation: fed-out 1s ease-in-out 3s forwards;
-}
-.flash-message-container .flash-message::after {
-    content: "";
-}
-.flash-message-container .flash-message.danger {
-    background-color: var(--danger-color-300);
-    border-left: 7px solid var(--danger-color-900);
-}
-.flash-message-container .flash-message.success {
-    background-color: var(--success-color-300);
-    border-left: 7px solid var(--success-color-900);
-}
-.flash-message-container .flash-message.warning {
-    background-color: var(--warning-color-300);
-    border-left: 7px solid var(--warning-color-900);
-}
-.flash-message-container .flash-message.info {
-    background-color: var(--info-color-300);
-    border-left: 7px solid var(--info-color-900);
-}
-.flash-message-container .flash-message .type-message {
-    text-transform: capitalize;
-}
-.flash-message-container .flash-message .times {
-    display: none;
-    float: right;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-@keyframes fed-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes fed-out {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-/* End Flush Messages */
-
-/* Start pointer events*/
-.un-clickable {
-    pointer-events: none;
-}
-/* End pointer events*/
 /* Start Icon */
 .angle-rotate {
     transform: rotate(180deg);
 }
 /* End Icon */
 /* Start Background */
-.no-bg {
+.transparent {
     background-color: transparent;
 }
 /* End Background */
